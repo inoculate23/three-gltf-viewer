@@ -102,7 +102,7 @@ export class Viewer {
 
     this.renderer = window.renderer = new WebGLRenderer({antialias: true});
     this.renderer.useLegacyLights = false;
-     this.renderer2.setAlpha = true;
+     this.renderer.setAlpha = true;
     this.renderer.setPixelRatio( window.devicePixelRatio );
     this.renderer.setSize( el.clientWidth, el.clientHeight );
 
