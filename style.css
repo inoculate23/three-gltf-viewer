@@ -44,7 +44,10 @@ body {
   font-size: 1.2rem;
   color: #999;
 }
-
+canvas {
+  z-index:6;
+  position:absolute;
+}
 .viewer {
   width: 100%;
   height: 100%;
