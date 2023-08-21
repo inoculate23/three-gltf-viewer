@@ -15,7 +15,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-#bk {
+#bg {
   z-index:-5;
   position:absolute;
   height:100%;
