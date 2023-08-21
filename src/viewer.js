@@ -106,6 +106,13 @@ export class Viewer {
     this.renderer.setPixelRatio( window.devicePixelRatio );
     this.renderer.setSize( el.clientWidth, el.clientHeight );
 
+    this.renderer2 = window.renderer = new WebGLRenderer({antialias: true});
+    this.renderer2.useLegacyLights = false;
+    this.renderer2.setAlpha = true;
+    this.renderer2.setPixelRatio( window.devicePixelRatio );
+    this.renderer2.setSize( el.clientWidth, el.clientHeight );
+
+
     this.pmremGenerator = new PMREMGenerator( this.renderer );
     this.pmremGenerator.compileEquirectangularShader();
 
@@ -153,6 +160,15 @@ export class Viewer {
   render () {
 
     this.renderer.render( this.scene, this.activeCamera );
+    if (this.state.grid) {
+      this.axesCamera.position.copy(this.defaultCamera.position)
+      this.axesCamera.lookAt(this.axesScene.position)
+      this.axesRenderer.render( this.axesScene, this.axesCamera );
+    }
+  }
+    render () {
+
+    this.renderer2.render( this.scene, this.activeCamera );
     if (this.state.grid) {
       this.axesCamera.position.copy(this.defaultCamera.position)
       this.axesCamera.lookAt(this.axesScene.position)
