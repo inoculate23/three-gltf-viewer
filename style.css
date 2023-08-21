@@ -21,6 +21,22 @@ body {
   height:100%;
   width:100%;
 }
+ .navbar  {
+                margin-left: 0px;
+                z-index:999;
+                background-color:aliceblue;
+        }
+        .navbar-center {
+            margin-left: 40px;
+            z-index:999;
+            background-color:aliceblue;
+        }
+        .stripe-buy-button {
+            width: 100px;
+        }
+        .synthwave {
+            background-color:aliceblue;
+        }
 .wrap {
   display: flex;
   width: 100vw;
