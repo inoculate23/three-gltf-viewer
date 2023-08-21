@@ -76,10 +76,10 @@ export class Viewer {
       exposure: 0.0,
       toneMapping: LinearToneMapping,
       ambientIntensity: 0.3,
-      ambientColor: '#FFFFFF',
+    
       directIntensity: 0.8 * Math.PI, // TODO(#116)
-      directColor: '#FFFFFF',
-      bgColor: '#191919',
+      alpha: true,
+
     };
 
     this.prevTime = 0;
@@ -88,10 +88,10 @@ export class Viewer {
     this.stats.dom.height = '48px';
     [].forEach.call(this.stats.dom.children, (child) => (child.style.display = ''));
 
-    this.backgroundColor = new Color(this.state.bgColor);
+
 
     this.scene = new Scene();
-    this.scene.background = this.backgroundColor;
+
 
     const fov = options.preset === Preset.ASSET_GENERATOR
       ? 0.8 * 180 / Math.PI
